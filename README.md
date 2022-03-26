@@ -2,8 +2,6 @@
 
 Converts Vectric 3D (X, Y, and Z) GRBL-postprocessed, mm-based gcode to a Eleksdraw-compatible gcode format.
 
-Vectric coordinate system should be centered on the workpiece and zeroed to the material surface.
-
 `args[0]` Default path: "./"\
 `args[1]` Default feedrate: 2500\
 `args[2]` Default pen up command: M3 S20\
@@ -28,10 +26,26 @@ For all gcode files in current folder, create Eleksdra-compatible copy by:
 - Replace last double pen up to ending pen up command
 
 ## Eleksdraw information
-Safe drawing box boundary: 245\*170 mm 
+Safe drawing boundary box: 245\*170 mm 
 
 Maximum x-axis range: 0-255 mm\
 Safe x-axis range: 5-250 mm
 
 Maximum y-axis range: -40-140 mm\
 Safe x-axis range: -35-135 mm
+
+## Vectric Aspire information
+Vectric coordinate system should be centered on the workpiece and zeroed to the material surface with the workpiece size equal to the safe drawing boundary box.
+
+### Process for gcode creation
+- Write desired text/import shapes/...
+- Right click and convert text to shapes
+- Select all
+- Deselect enclosed inner shapes
+- Union remaining selection
+- Apply toolpath for, e.g., contour or filling
+
+### Continued process within GRBL-Plotter
+- Run conversion from Z-including gcode to EleksDraw-compatible gcode
+- Load compatible gcode into GRBL-Plotter
+- Apply center-bottom origin XY and, if required, offset
