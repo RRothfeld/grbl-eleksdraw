@@ -2,11 +2,10 @@
 
 Converts Vectric 3D (X, Y, and Z) GRBL-postprocessed, mm-based gcode to a Eleksdraw-compatible gcode format.
 
-Default pen up command: M3 S20
+Default pen up command: M3 S20\
 Default pen down height: M3 S30
 
 ## Ressources
-
 - Eleksdraw machine
 - Eleksdraw driver
 - GRBL-Plotter
@@ -20,8 +19,8 @@ For all gcode files in current folder, create Eleksdra-compatible copy by:
 - Remove all Z commands from all command lines
 
 ## Eleksdraw information
-Maximum x-axis range: 0-255 mm
+Maximum x-axis range: 0-255 mm\
 Safe x-axis range: 5-250 mm
 
-Maximum y-axis range: -40-140 mm
+Maximum y-axis range: -40-140 mm\
 Safe x-axis range: -35-135 mm
