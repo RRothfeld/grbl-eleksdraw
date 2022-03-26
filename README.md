@@ -21,6 +21,8 @@ For all gcode files in current folder, create Eleksdra-compatible copy by:
 - Remove all Z commands from all command lines
 
 ## Eleksdraw information
+Safe drawing box boundary: 245\*170 mm 
+
 Maximum x-axis range: 0-255 mm\
 Safe x-axis range: 5-250 mm
 
