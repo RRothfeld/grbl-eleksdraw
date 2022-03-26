@@ -12,6 +12,7 @@ public class ConvertGCodeToEleksDraw {
         String path = "./";
         String filetype = ".gcode";
         String marker = ".eldrw";
+        String penEnd = "M3 S0";
         String penUp = "M3 S20";
         String penDown = "M3 S30";
         String lb = "\r\n"; // line break
@@ -33,16 +34,12 @@ public class ConvertGCodeToEleksDraw {
 
                 String gcode = Files.readString(Paths.get(file));
 
+                //gcode = gcode.replaceAll(".*S.*" + lb, penUp + lb);
                 gcode = gcode.replaceAll(".*M.*" + lb, "");
                 gcode = gcode.replaceAll(".*G0Z[0-9].*" + lb, penUp + lb);
                 gcode = gcode.replaceAll(".*G1Z-.*" + lb, penDown + lb);
-
-//                Matcher m = Pattern.compile("(?=(aa))").matcher(s);
-//                List<Integer> pos = new ArrayList<Integer>();
-//                while (m.find())
-//                {
-//                    pos.add(m.start());
-//                }
+                gcode = gcode.replaceAll("(?!.*[XY])(Z\\d+.\\d+.*)" + lb, lb);
+                gcode = gcode.replaceAll(penUp + lb + penUp, penUp + lb + penEnd);
 
                 Path newfile = Paths.get(file.substring(0, file.length() - filetype.length()) + marker + filetype);
                 Files.writeString(newfile, gcode, StandardCharsets.UTF_8);
