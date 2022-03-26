@@ -12,7 +12,7 @@ Default pen down height: M3 S30
 - GRBL-Plotter
 
 ## Conversions
-
+For all gcode files in current folder, create Eleksdra-compatible copy by:
 - Removing all M-containing command lines
 - Replacing all high Z-only commands with pen up
 - Replacing all low Z-only commands with pen down
