@@ -2,6 +2,8 @@
 
 Converts Vectric 3D (X, Y, and Z) GRBL-postprocessed, mm-based gcode to a Eleksdraw-compatible gcode format.
 
+Vectric coordinate system should be centered on the workpiece and zeroed to the material surface.
+
 Default pen up command: M3 S20\
 Default pen down height: M3 S30
 
