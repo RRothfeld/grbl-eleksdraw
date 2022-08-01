@@ -17,8 +17,8 @@ public class ConvertGCodeToEleksDraw {
         int feedrate = 2500;
 
         String penEnd = "M3 S0";
-        String penUp = "M3 S20";
-        String penDown = "M3 S30";
+        String penUp = "M3 S10";
+        String penDown = "M3 S40";
 
         if (args.length > 0)
             path = args[0];
