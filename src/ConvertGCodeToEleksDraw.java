@@ -14,20 +14,21 @@ public class ConvertGCodeToEleksDraw {
         String marker = ".eldrw";
         String lb = "\r\n"; // line break
 
-        int feedrate = 2500;
+        int feedrate = 5000;
 
         String penEnd = "M3 S0";
-        String penUp = "M3 S10";
-        String penDown = "M3 S40";
+        String penUp = "M3 S20";
+        String penDown = "M3 S30";
 
         if (args.length > 0)
-            path = args[0];
+            feedrate = Integer.parseInt(args[0]);
         if (args.length > 1)
-            feedrate = Integer.parseInt(args[1]);
+            penUp = args[1];
         if (args.length > 2)
-            penUp = args[2];
+            penDown = args[2];
         if (args.length > 3)
-            penDown = args[3];
+            path = args[3];
+
 
 
         try (Stream<Path> walk = Files.walk(Paths.get(path))) {
