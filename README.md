@@ -3,13 +3,12 @@
 Converts Vectric 3D (X, Y, and Z) GRBL-postprocessed, mm-based gcode to a Eleksdraw-compatible gcode format.
 
 `args[0]` Default feedrate: 5000\
-`args[1]` Default pen up command: M3 S25\
-`args[2]` Default pen down height: M3 S40
-`args[3]` Default path: "./"\
+`args[1]` Default pen ending up command: M3 S10\
+`args[2]` Default pen up command: M3 S25\
+`args[3]` Default pen down height: M3 S40
+`args[4]` Default path: "./"\
 
 All of these arguments are optional.
-
-Ending pen up command: M3 S0
 
 ## Ressources
 - Eleksdraw machine

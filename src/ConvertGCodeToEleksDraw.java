@@ -18,16 +18,18 @@ public class ConvertGCodeToEleksDraw {
 
         String penEnd = "M3 S10";
         String penUp = "M3 S25";
-        String penDown = "M3 S30";
+        String penDown = "M3 S40";
 
         if (args.length > 0)
             feedrate = Integer.parseInt(args[0]);
         if (args.length > 1)
-            penUp = args[1];
+            penEnd = args[1];
         if (args.length > 2)
-            penDown = args[2];
+            penUp = args[2];
         if (args.length > 3)
-            path = args[3];
+            penDown = args[3];
+        if (args.length > 4)
+            path = args[4];
 
 
 
